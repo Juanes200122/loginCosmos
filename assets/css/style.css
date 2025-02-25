@@ -1,0 +1,350 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        background-image: url(../image/910923.webp);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100dvh;
+        z-index: -1;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        background-color: #00000083;   
+        width: 100%;
+        height: 100dvh;
+        z-index: 6;
+    }
+}
+
+
+.section-container-login {
+    position: relative;
+    z-index: 9 !important;
+    overflow: auto;
+    padding: 10px;
+}
+
+.container-login {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    width: 950px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 20px;
+
+    .form-login {
+        max-width: 550px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+
+        .info-text {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .title-login {
+                color: white;
+                font-size: 30px;
+            }
+
+            .text-login {
+                color: #9b9b9b;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 14px;
+
+            .bloque-name {
+                display: flex;
+                width: 100%;
+                gap: 10px;
+            }
+
+            input {
+                width: 100%;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                padding: 14px 12px;
+                border-radius: 10px;
+                font-size: 15px;
+                color: white;
+
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    -webkit-text-fill-color: white !important;
+                    transition: background-color 5000s ease-in-out 0s;
+                }
+            }
+
+            input[type="number"]::-webkit-inner-spin-button, 
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type="number"] { -moz-appearance: textfield; }
+
+            button { 
+                cursor: pointer; 
+                color: white;  
+                width: 100%;
+                padding: 14px 12px;
+                border: none;
+                border-radius: 10px;
+                font-size: 16px;
+                font-weight: normal;
+            }
+
+            .register-user {
+                background: linear-gradient(90deg, #763AF5, #A604F2);               
+            }
+
+            .google {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                transition: border 0.2s ease-in-out;
+
+                &:hover { border: 1px solid #763AF5; }
+            }
+
+            .text-login-gender {
+                color: rgb(155, 155, 155);
+                font-size: 15px;
+                width: 100%;
+                padding-top: 20px;
+            }
+
+            .bloque-genero {
+                width: 100%;
+                display: flex;
+                gap: 10px;
+
+                .label-container {
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.25);
+                    width: 90px;
+                    height: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column-reverse;
+                    border-radius: 10px;
+                    gap: 5px;
+                    position: relative;
+
+                    img { filter: invert(1); opacity: 0.5; }
+                    span { font-size: 10px; color: #9b9b9b; }
+                }
+            }
+
+            .checkbox-container {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                padding: 10px 0px;
+
+                .ch1-container { display: flex; gap: 10px;
+
+                    .checkBox {
+                        display: block;
+                        cursor: pointer;
+                        width: 15px;
+                        height: 15px;
+                        border: 3px solid rgba(255, 255, 255, 0);
+                        border-radius: 5px;
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow: 0px 0px 0px 2px #fff;
+                    }
+
+                    .checkBox div {
+                        width: 30px;
+                        height: 30px;
+                        background-color: #fff;
+                        top: -52px;
+                        left: -52px;
+                        position: absolute;
+                        transform: rotateZ(45deg);
+                        z-index: 100;
+                    }
+
+                    .checkBox input[type=checkbox]:checked+div {
+                        left: -10px;
+                        top: -10px;
+                    }
+
+                    .checkBox input[type=checkbox] {
+                        position: absolute;
+                        left: 50px;
+                        visibility: hidden;
+                    }
+
+                    .transition {
+                        transition: 300ms ease;
+                    }
+
+                    span {
+                        font-size: 15px;
+                        color: rgb(155, 155, 155);
+                    }
+                }
+            }
+        }
+    }
+
+    .decoration-path {
+        background-image: url(../image/1024077.webp);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        max-width: 400px;
+        width: 100%;
+        border-radius: 10px;
+
+    }
+}
+
+
+
+.checkBox-gender {
+    display: block;
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 2px #ffffff45;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.checkBox-gender div {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    top: -52px;
+    left: -52px;
+    position: absolute;
+    transform: rotateZ(45deg);
+    z-index: 100;
+}
+
+.checkBox-gender input[type=checkbox]:checked+div {
+    left: -10px;
+    top: -10px;
+}
+
+.checkBox-gender input[type=checkbox] {
+    position: absolute;
+    left: 50px;
+    visibility: hidden;
+}
+
+.transition {
+    transition: 300ms ease;
+}
+
+
+
+
+
+
+
+.password-visibility {
+    position: relative;
+
+    #Eye-slash, #Eye, #Eye-confirm, #Eye-slash-confirm {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.4;
+        cursor: pointer;
+    }
+
+    #Eye, #Eye-confirm {
+        display: none;
+    }
+}
+
+
+
+
+.bloque-password-progress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+@media (max-width: 980px) {
+    .container-login, .section-container-login { width: 100%; }
+    .form-login {
+        width: 60% !important;
+        min-width: 400px;
+    }
+
+    .decoration-path { width: 40% !important; }
+}
+
+@media (max-width: 800px) {
+    .container-login {
+        flex-direction: column-reverse;
+    }
+
+    .decoration-path { width: 100% !important; height: 300px; max-width: 100% !important; }
+    .form-login { width: 100% !important; min-width: 200px; max-width: 100% !important; }
+}
+
+@media (max-width: 460px) {
+    .bloque-name { flex-direction: column; }
+}
+
+@media (max-height: 755px) {
+    body { align-items: normal; }
+}
+
+@media (min-height: 755px) and (max-width: 800px) {
+    body { align-items: normal; }
+}
